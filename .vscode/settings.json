@@ -59,6 +59,7 @@
   "files.associations": {
     "*.ejs": "html",
     "*.rmd": "markdown",
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "iostream": "cpp"
   }
 }
