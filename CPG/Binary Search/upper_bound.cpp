@@ -22,7 +22,7 @@ int main(){
     for(ll a=0;a<n;a++){
         cin>>v[a];
     }
-    for(ll a=0;a<n;a++){
+    for(ll a=0;a<k;a++){
         ll t;cin>>t;
 
         cout<<distance(v.begin(),lower_bound(v.begin(),v.end(),t))+1<<"\n";
