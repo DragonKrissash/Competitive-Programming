@@ -18,12 +18,14 @@ int main(){
     float low=0,r=1000,ans=0;
     for(int a=0;a<n;a++)
     {cin>>v[a];}
-    while(r-low>1){
+    int t=100;
+    while(t--){
         float size=(low+r)/2;
         if(check(size,v,k)){
             ans=size;low=size+1;
         }
         else r=size-1;
     }
-    cout<<"The answer: "<<ans;
+    cout<<fixed<<setprecision(6);
+    cout<<ans;
 }
