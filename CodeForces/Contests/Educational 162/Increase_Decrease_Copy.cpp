@@ -19,10 +19,14 @@ int main()
         if(v1[b]<=v2[n])
         toadd=max(toadd,v1[b]);
         v1.push_back(toadd);
+        bool y=false;
         int changes=1;
         for(int b=0;b<n+1;b++)
         {changes+=abs(v1[b]-v2[b]);
+         if((v1[b]<v2[n] && v2[n]<v2[b]) ||(v1[b]>v2[n] && v2[n]>v2[b]))
+         y=true;
         }
+        if(y)changes-=1;
         cout<<changes<<"\n";
     }
 
