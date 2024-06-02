@@ -6,8 +6,14 @@ int main()
   cin.tie(NULL);
     int t;
     cin>>t;
-    for(int a=0;a<t;a++){
-        
+    while(t--){
+      int l,r;
+      cin>>l>>r;
+      int c=0;
+      while(r>1){
+        c++;r/=2;
+      }
+      cout<<c<<"\n";
     }
 
 }

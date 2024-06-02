@@ -3,12 +3,12 @@ using namespace std;
 typedef long long ll;
 
 ll findxor(ll n,ll m){
-    if(m==0)
-    return n;
-    else if(n==0)
-    return findxor(0,m-1)|findxor(1,m-1);
-    else return findxor(n-1,m-1)|findxor(n,m-1)|findxor(n+1,m-1);
-}
+    ll l=(n-m)>0?n-m:0;
+    ll r=n+m;
+    while(l<=r)
+    l=l|(l+1);
+    return l;
+    }
 
 int main()
 { ios_base::sync_with_stdio(false);
