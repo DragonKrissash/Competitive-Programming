@@ -12,13 +12,13 @@ void bfs(int i, int j,vector<vector<char>>& grid){
         int y= q.front().second;
         grid[x][y]=0;
         q.pop();
-        if(x-1>=0 && grid[x-1][y]==1)
+        if(x-1>=0 && grid[x-1][y]=='1')
         q.push({x-1, y});
-        if(x+1<=n-1 && grid[x+1][y]==1)
+        if(x+1<=n-1 && grid[x+1][y]=='1')
         q.push({x+1,y});
-        if(y-1>=0 && grid[x][y-1]==1)
+        if(y-1>=0 && grid[x][y-1]=='1')
         q.push({x,y-1});
-        if(y+1<=m-1 && grid[x][y+1]==1)
+        if(y+1<=m-1 && grid[x][y+1]=='1')
         q.push({x,y+1});
     }
 
@@ -29,8 +29,8 @@ int numIslands(vector<vector<char>>& grid) {
         int m=grid[0].size();
         int c=0;
         for (int i=0;i<n;i++){
-            for (int j=0;j<n;j++){
-                if (grid[i][j]==1){
+            for (int j=0;j<m;j++){
+                if (grid[i][j]=='1'){
                     c++;
                     bfs(i,j,grid);
                 }
