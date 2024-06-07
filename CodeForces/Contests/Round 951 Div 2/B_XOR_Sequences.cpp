@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define all(x) begin(x), end(x)
-#define sz(x) ((lli)(x).size())
 #define X first
 #define Y second
 using vi=vector<int>;
