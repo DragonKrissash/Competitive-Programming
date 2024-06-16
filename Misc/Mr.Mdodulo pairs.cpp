@@ -31,7 +31,7 @@ int printPairs(int arr[], int n, int k)
             if(arr[a]>k && map[k]){
                 count++;
             }
-            else{
+            
                 if(arr[a]>=k){
                     vector<int>v=findDivs(arr[a]);
                     for(auto x:v){
@@ -40,7 +40,7 @@ int printPairs(int arr[], int n, int k)
                     }
                     v.clear();
                 }
-            }       
+                 
         }
         map.clear();
         return count;
