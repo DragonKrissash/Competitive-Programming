@@ -4,25 +4,17 @@ using namespace std;
 #define X first
 #define Y second
 
-bool isPossible(float midtime,vector<long double>&x,vector<long double>&v){
-    int n=x.size();
-    vector<pair<float,float>>ranges;
-    for(int a=0;a<n;a++){
-        ranges.push_back({x[a]-midtime*v[a],x[a]+midtime*v[a]});
+bool isPossible(double midtime,vector<long long>&x,vector<long long>&v){
+    double left=-1e9,right=1e9;
+    for(int a=0;a<x.size();a++){
+        auto l=x[a]-midtime*v[a];
+        auto r=x[a]+midtime*v[a];
+        if(l>right || r<left)
+        return false;
+        left=max(left,l);
+        right=min(right,r);
     }
-    sort(all(ranges));
-    int s=ranges[0].X,e=ranges[0].Y;
-    int si,ei;bool possible=true;
-    for(int a=1;a<n;a++){
-        si=ranges[a].X;ei=ranges[a].Y;
-        if(s<=si){
-            s=si;
-            if(si<=e) e=min(e,ei);
-            else {possible=false;break;}
-        }
-    }
-    cout<<midtime<<" "<<s<<" "<<e<<endl;
-    return possible;
+    return true;
 }
 
 int main()
@@ -30,22 +22,23 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     int n;cin>>n;
-    vector<long double> x(n,0);
-    vector<long double> v(n,0);
+    vector<long long> x(n,0);
+    vector<long long> v(n,0);
     for(int i=0;i<n;i++){
         cin>>x[i]>>v[i];
     }
-    float mintime=0,maxtime=1e5;
+    double lo=-0.1,hi=1e9;
     int loop=100;
-    float ans;
-    while (maxtime-mintime>1)
+    double ans;
+    while (loop--)
     {
-        float midtime=(mintime+maxtime)/2.0;
-        if(isPossible(midtime,x,v))
-        {ans=midtime;maxtime=midtime-1;}
-        else mintime=midtime+1;
+        double mid=(lo+hi)/2.0;
+        if(isPossible(mid,x,v))
+        hi=mid;
+        else lo=mid;
+
     }
     cout<<fixed<<setprecision(1);
-    cout<<ans;
+    cout<<hi;
     
 }
