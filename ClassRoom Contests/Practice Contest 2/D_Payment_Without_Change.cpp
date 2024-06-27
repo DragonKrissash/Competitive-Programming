@@ -12,8 +12,12 @@ signed main(){
     fastio
     int tc;cin>>tc;
     while(tc--){
-        ll x,y,k;
-        cin>>x>>y>>k;
-        
+        ll a,b,n,s;
+        cin>>a>>b>>n>>s;
+        bool y=false;
+        ll c=min(a,s/n);
+        if(s-c*n <=b)
+        cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
     }
 }

@@ -12,8 +12,8 @@ signed main(){
     fastio
     int tc;cin>>tc;
     while(tc--){
-        ll x,y,k;
-        cin>>x>>y>>k;
-        
+        int a,b;
+        cin>>a>>b;
+        cout<<a+b<<endl;
     }
 }
