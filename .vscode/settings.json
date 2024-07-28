@@ -68,7 +68,8 @@
     "format": "cpp",
     "ostream": "cpp",
     "*.tcc": "cpp",
-    "list": "cpp"
+    "list": "cpp",
+    "complex": "cpp"
   },
   "C_Cpp.default.compilerPath": "C:\\ProgramData\\mingw64\\mingw64\\bin\\g++.exe"
 }
